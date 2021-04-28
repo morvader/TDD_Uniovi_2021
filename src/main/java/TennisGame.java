@@ -16,12 +16,18 @@ public class TennisGame {
     }
 
     public String getPuntuacion() {
-        if(puntosJugador1 == puntosJugador2)
+        if(puntosJugador1 == puntosJugador2 && puntosJugador1 >= 4)
+            return "Deuce";
+        else if(puntosJugador1 == puntosJugador2)
             return this.puntoToString(puntosJugador1) + " Iguales";
-        if(puntosJugador1 == 1 && puntosJugador2 == 0)
-            return "15 Nada";
+        else if(puntosJugador1 >=4 && puntosJugador1 == puntosJugador2 + 1)
+            return "Ventaja jugador1";
+        else if(puntosJugador2 >=4 && puntosJugador2 == puntosJugador1 + 1)
+            return "Ventaja jugador2";
+        else
+            return this.puntoToString(puntosJugador1) + " " + this.puntoToString(puntosJugador2);
 
-        return "";
+        //return "";
     }
 
     private String puntoToString(int puntuacion){
