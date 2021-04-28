@@ -47,12 +47,24 @@ public class FizzBuzzTest {
     }
     @Test
     void NumeroNormal_Numero() {
-        int numero = 1;
-        String resultadoEsperado = "1";
+        int numero = 2;
+        String resultadoEsperado = "2";
 
         String resultado = fizzBuzz.getValor(numero);
 
         assertThat("No ha devuelto el numero", resultado, is(resultadoEsperado));
+
+    }
+    @Test
+    void NumerosNormales_Numero() {
+        int [] numero = new int[]{1,2,4,7,8,11};
+        String resultado = "";
+
+        for (int i = 0; i < numero.length; i++) {
+            resultado = fizzBuzz.getValor(numero[i]);
+            assertThat("No ha devuelto el numero", resultado, is(String.valueOf(numero[i])));
+
+        }
 
     }
 }
